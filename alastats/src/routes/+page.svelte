@@ -44,6 +44,7 @@
 	let sexfilter = 'all';
 	let activefilter = 'all';
 	let lastactivefilter = 0;
+	let firstactivefilter = new Date();
 	let sum = 0;
 
 	$: {
@@ -65,6 +66,12 @@
 			if (
 				new Date(parseInt(date[2]), parseInt(date[1]) - 1, parseInt(date[0])) <=
 				new Date(lastactivefilter)
+			)
+				return;
+
+			if (
+				new Date(parseInt(date[2]), parseInt(date[1]) - 1, parseInt(date[0])) >=
+				new Date(firstactivefilter)
 			)
 				return;
 
@@ -175,6 +182,10 @@
 	<div class="filter">
 		Zuletzt gesehen nach:
 		<input type="date" bind:value={lastactivefilter} />
+	</div>
+	<div class="filter">
+		Zuletzt gesehen bevor:
+		<input type="date" bind:value={firstactivefilter} />
 	</div>
 </div>
 
