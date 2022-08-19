@@ -91,7 +91,16 @@
 		};
 
 		sexdata = {
-			labels: [...sexes.keys()],
+			labels: [...sexes.keys()].map((key) => {
+				switch (key) {
+					case 'f':
+						return 'Frau';
+					case 'm':
+						return 'Mann';
+					default:
+						return 'Unbekannt';
+				}
+			}),
 			datasets: [
 				{
 					values: [...sexes.values()]
@@ -155,7 +164,7 @@
 
 <div class="sexnstate">
 	<div>
-		<Chart data={sexdata} type="pie" />
+		<Chart data={sexdata} type="pie" title="Geschlecht" />
 	</div>
 
 	<div>
