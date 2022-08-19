@@ -54,17 +54,20 @@
 		active = new Map<string, number>();
 
 		chars.forEach((char) => {
+			if (char.lastseen === 'noch nicht erfasst') return;
 			if (racefilter !== 'all' && char.race !== racefilter) return;
 			if (classfilter !== 'all' && char.class !== classfilter) return;
 			if (sexfilter !== 'all' && char.sex !== sexfilter) return;
 			if (activefilter !== 'all' && char.state !== activefilter) return;
-			// const date = char.lastseen.split(' ')[0].split('.');
 
-			// if (
-			// 	new Date(parseInt(date[2]), parseInt(date[1]) - 1, parseInt(date[0])) >=
-			// 	new Date(lastactivefilter)
-			// )
-			// 	return;
+			const date = char.lastseen.split(' ')[0].split('.');
+
+			if (
+				new Date(parseInt(date[2]), parseInt(date[1]) - 1, parseInt(date[0])) <=
+				new Date(lastactivefilter)
+			)
+				return;
+
 			//console.log(new Date(char.lastseen));
 			sum++;
 
@@ -169,10 +172,10 @@
 			<option value="abwesend">abwesend</option>
 		</select>
 	</div>
-	<!-- <div class="filter">
-		Zuletzt aktiv nach:
+	<div class="filter">
+		Zuletzt gesehen nach:
 		<input type="date" bind:value={lastactivefilter} />
-	</div> -->
+	</div>
 </div>
 
 <div class="sexnstate">
