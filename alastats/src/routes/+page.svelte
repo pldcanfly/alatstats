@@ -180,11 +180,8 @@
 		</select>
 	</div>
 	<div class="filter">
-		Zuletzt gesehen nach:
-		<input type="date" bind:value={lastactivefilter} />
-	</div>
-	<div class="filter">
-		Zuletzt gesehen bevor:
+		Zuletzt gesehen:
+		<input type="date" bind:value={lastactivefilter} /> -
 		<input type="date" bind:value={firstactivefilter} />
 	</div>
 </div>
