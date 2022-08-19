@@ -119,7 +119,7 @@
 	}
 </script>
 
-<h1>Alatair-Stats</h1>
+<h1>Alathair-Stats</h1>
 
 <div class="filters">
 	<div class="filter">
