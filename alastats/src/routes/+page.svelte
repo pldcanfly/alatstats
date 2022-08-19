@@ -185,7 +185,10 @@
 		<input type="date" bind:value={firstactivefilter} />
 	</div>
 </div>
-
+<p>
+	Achtung! Es handelt sich hier nur um Daten aus der Charakter-Datenbank von Alathair. Entsprechend
+	tauchen Charaktere die ihre Klasse versteckt haben auch nur in der Klasse "unbekannt" auf.
+</p>
 <div class="sexnstate">
 	<div>
 		<Chart data={sexdata} type="pie" title="Geschlecht" />
