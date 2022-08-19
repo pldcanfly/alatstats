@@ -58,13 +58,13 @@
 			if (classfilter !== 'all' && char.class !== classfilter) return;
 			if (sexfilter !== 'all' && char.sex !== sexfilter) return;
 			if (activefilter !== 'all' && char.state !== activefilter) return;
-			const date = char.lastseen.split(' ')[0].split('.');
+			// const date = char.lastseen.split(' ')[0].split('.');
 
-			if (
-				new Date(parseInt(date[2]), parseInt(date[1]) - 1, parseInt(date[0])) >=
-				new Date(lastactivefilter)
-			)
-				return;
+			// if (
+			// 	new Date(parseInt(date[2]), parseInt(date[1]) - 1, parseInt(date[0])) >=
+			// 	new Date(lastactivefilter)
+			// )
+			// 	return;
 			//console.log(new Date(char.lastseen));
 			sum++;
 
@@ -169,10 +169,10 @@
 			<option value="abwesend">abwesend</option>
 		</select>
 	</div>
-	<div class="filter">
+	<!-- <div class="filter">
 		Zuletzt aktiv nach:
 		<input type="date" bind:value={lastactivefilter} />
-	</div>
+	</div> -->
 </div>
 
 <div class="sexnstate">
