@@ -147,8 +147,8 @@
 		<select bind:value={sexfilter}>
 			<option value="all">Alle</option>
 			<option value="m">Männlich</option>
-			<option value="m">Weiblich</option>
-			<option value="m">Unbekannt</option>
+			<option value="f">Weiblich</option>
+			<option value="?">Unbekannt</option>
 		</select>
 	</div>
 
